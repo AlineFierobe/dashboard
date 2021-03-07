@@ -1,32 +1,35 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
+    <header class="header">
+      <nav id="nav">
+        <ul>
+          <li>
+            <router-link to="/">
+              DashBoard
+            </router-link>
+          </li>
+          <li>
+            <router-link
+              :to="{
+                name: 'Profile',
+                params: { id: user.id },
+              }"
+            >
+              Profil
+            </router-link>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="main">
+      <router-view />
+    </main>
+    <footer class="footer">
+      &copy; 2021
+    </footer>
   </div>
 </template>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
+@import "./assets/sass/style.scss";
 </style>

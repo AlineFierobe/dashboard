@@ -1,0 +1,24 @@
+/*--- BACKGROUND ---*/
+body {
+  background: $light;
+  color: $dark;
+}
+/*--- MAIN GRID ---*/
+#app {
+  min-height: 100vh;
+  display: grid;
+  grid:
+    "header" auto
+    "main" 1fr
+    "footer" auto
+    / 1fr;
+  .header {
+    grid-area: header;
+  }
+  .main {
+    grid-area: main;
+  }
+  .footer {
+    grid-area: footer;
+  }
+}
